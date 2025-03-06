@@ -10,6 +10,10 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { register } from './controllers/auth.js'
 import { createPost } from './controllers/posts.js';
+import authRoutes from './routes/auth.js'
+import usersRoutes from './routes/users.js'
+import postsRoutes from './routes/posts.js'
+import {verifyToken} from './middleware/auth.js';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -40,7 +44,12 @@ const upload = multer({ storage })
 
 /* Routes with files */
 app.post('/auth/register', upload.single('picture'), register)
-app.post('/posts', upload.single('picture'), createPost)
+app.post('/posts', verifyToken, upload.single('picture'), createPost)
+
+/* Routes */
+app.use('/auth', authRoutes)
+app.use('/users', usersRoutes)
+app.use('/posts', postsRoutes)
 
 /* Mongoose setup */
 const PORT = process.env.PORT || 3031

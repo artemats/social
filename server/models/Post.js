@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+// TODO: create object Author
 const PostSchema = new mongoose.Schema({
 	userId: {
 		type: String,
