@@ -2,6 +2,7 @@ import { sliceStateProps } from 'src/store/types.ts'
 import { STATUS } from 'src/store/constants.ts'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IUser } from 'src/types'
+import { RootState } from 'src/store'
 
 const initialState: sliceStateProps<{
   user: IUser | null
@@ -38,11 +39,6 @@ export const userSlice = createSlice({
 
 export const { setLogin, setLogout } = userSlice.actions
 
-export const selectUser = (state: {
-  [key: string]: sliceStateProps<{
-    user: IUser | null
-    token: string | null
-  }>
-}) => state[userKey]
+export const selectUser = (state: RootState) => state[userKey]
 
 export default userSlice.reducer

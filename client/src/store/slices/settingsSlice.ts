@@ -1,5 +1,5 @@
 import { STATUS } from 'src/store/constants.ts'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { sliceStateProps } from 'src/store/types.ts'
 import { ThemeTypes } from 'src/types'
 import { RootState } from 'src/store'
@@ -18,13 +18,13 @@ export const settingsSlice = createSlice({
   name: settingsKey,
   initialState,
   reducers: {
-    setMode: (state, action: PayloadAction<ThemeTypes>) => {
-      state.data.theme = action.payload
+    switchTheme: (state) => {
+      state.data.theme = state.data.theme === 'light' ? 'dark' : 'light'
     },
   },
 })
 
-export const { setMode } = settingsSlice.actions
+export const { switchTheme } = settingsSlice.actions
 
 export const selectSettings = (state: RootState) => state[settingsKey]
 
