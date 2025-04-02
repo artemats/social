@@ -15,8 +15,9 @@ function App() {
     data: { theme: mode },
   } = useAppSelector(selectSettings)
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
-  const user = false
+  const user = true
   console.log('App')
+  // TODO: add layout for authenticated and unauthenticated users
   return (
     <main id="app">
       <BrowserRouter>
@@ -26,14 +27,21 @@ function App() {
             <Route
               path="/"
               element={
-                <ProtectedRoute isLocked={user} redirectPath="/login">
+                <ProtectedRoute isLocked={!user} redirectPath="/login">
                   <HomePage />
                 </ProtectedRoute>
               }
             />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/registration" element={<LoginPage />} />
-            <Route path="/profile/:userId" element={<ProfilePage />} />
+            <Route
+              path="/profile/:userId"
+              element={
+                <ProtectedRoute isLocked={!user} redirectPath="/login">
+                  <ProfilePage />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
