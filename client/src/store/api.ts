@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { ITestUser } from 'src/types'
 
-export const usersApi = createApi({
+export const api = createApi({
   reducerPath: 'usersApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   endpoints: (build) => ({
@@ -14,4 +14,4 @@ export const usersApi = createApi({
   }),
 })
 
-export const { useGetAllUsersQuery, useGetUserQuery } = usersApi
+export const { useGetAllUsersQuery, useGetUserQuery } = api

@@ -1,5 +1,5 @@
 import { AppBar, Container, Toolbar, Typography, useTheme } from '@mui/material'
-import UserNav from 'src/components/UserNav'
+import UserNav from 'src/components/layout/UserNav'
 
 const Header = () => {
   const theme = useTheme()
@@ -9,7 +9,7 @@ const Header = () => {
       position="relative"
       sx={{ backgroundColor: theme.palette.background.default }}
     >
-      <Container>
+      <Container maxWidth="lg">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Typography variant="h3">LinkUp</Typography>
           <UserNav />

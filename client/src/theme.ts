@@ -1,6 +1,6 @@
 import { ThemeTypes } from 'src/types'
 
-export const colorTokens: Record<string, Record<number, string>> = {
+export const colors: Record<string, Record<number, string>> = {
   grey: {
     0: '#FFFFFF',
     10: '#F6F6F6',
@@ -37,44 +37,44 @@ export const themeSettings = (mode: ThemeTypes) => {
       ...(mode === 'dark'
         ? {
             primary: {
-              dark: colorTokens.primary[200],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
+              dark: colors.primary[200],
+              main: colors.primary[500],
+              light: colors.primary[800],
             },
-            neutral: {
-              dark: colorTokens.grey[100],
-              main: colorTokens.grey[200],
-              mediumMain: colorTokens.grey[300],
-              medium: colorTokens.grey[400],
-              light: colorTokens.grey[700],
+            secondary: {
+              dark: colors.grey[100],
+              main: colors.grey[200],
+              mediumMain: colors.grey[300],
+              medium: colors.grey[400],
+              light: colors.grey[700],
             },
             background: {
-              default: colorTokens.grey[900],
-              alt: colorTokens.grey[800],
+              default: colors.grey[900],
+              alt: colors.grey[800],
             },
           }
         : {
             primary: {
-              dark: colorTokens.primary[700],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[50],
+              dark: colors.primary[700],
+              main: colors.primary[500],
+              light: colors.primary[50],
             },
-            neutral: {
-              dark: colorTokens.grey[700],
-              main: colorTokens.grey[500],
-              mediumMain: colorTokens.grey[400],
-              medium: colorTokens.grey[300],
-              light: colorTokens.grey[50],
+            secondary: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              mediumMain: colors.grey[400],
+              medium: colors.grey[300],
+              light: colors.grey[50],
             },
             background: {
-              default: colorTokens.grey[10],
-              alt: colorTokens.grey[0],
+              default: colors.grey[10],
+              alt: colors.grey[0],
             },
           }),
     },
     typography: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
-      fontSize: 12,
+      fontSize: 14,
       h1: {
         fontFamily: ['Rubik', 'sans-serif'].join(','),
         fontSize: 40,
@@ -85,19 +85,19 @@ export const themeSettings = (mode: ThemeTypes) => {
       },
       h3: {
         fontFamily: ['Rubik', 'sans-serif'].join(','),
-        fontSize: 24,
+        fontSize: 28,
       },
       h4: {
         fontFamily: ['Rubik', 'sans-serif'].join(','),
-        fontSize: 20,
+        fontSize: 24,
       },
       h5: {
         fontFamily: ['Rubik', 'sans-serif'].join(','),
-        fontSize: 16,
+        fontSize: 20,
       },
       h6: {
         fontFamily: ['Rubik', 'sans-serif'].join(','),
-        fontSize: 14,
+        fontSize: 18,
       },
     },
   }
