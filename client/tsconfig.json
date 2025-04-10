@@ -13,7 +13,7 @@
       "src",
       "**/*.ts",
       "**/*.tsx",
-      "src/global.d.ts"
+      "src/global.d.ts",
     ]
   }
 }
