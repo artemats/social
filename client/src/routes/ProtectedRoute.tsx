@@ -12,6 +12,7 @@ const ProtectedRoute = ({
   redirectPath = '/login',
   children,
 }: ProtectedRouteProps) => {
+  console.log('ProtectedRoute')
   if (isLocked) {
     return <Navigate replace to={redirectPath} />
   }

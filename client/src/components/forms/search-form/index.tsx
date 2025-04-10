@@ -1,4 +1,4 @@
-import { IconButton, InputBase, Box, useTheme } from '@mui/material'
+import { IconButton, InputBase, Box } from '@mui/material'
 import { Search } from '@mui/icons-material'
 
 type SearchFormProps = {
@@ -6,15 +6,13 @@ type SearchFormProps = {
 }
 
 const SearchForm = ({ onSubmit }: SearchFormProps) => {
-  const theme = useTheme()
-
   return (
     <form>
       <Box
         sx={{
-          backgroundColor: theme.palette.secondary.light,
           padding: '0 1rem',
           borderRadius: 1,
+          backgroundColor: 'background.paper',
         }}
       >
         <InputBase placeholder="Search..." />

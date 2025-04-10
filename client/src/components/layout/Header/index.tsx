@@ -7,11 +7,19 @@ const Header = () => {
   return (
     <AppBar
       position="relative"
-      sx={{ backgroundColor: theme.palette.background.default }}
+      sx={{ backgroundColor: 'background.default' }}
+      data-testid="header"
     >
       <Container maxWidth="lg">
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography variant="h3">LinkUp</Typography>
+        <Toolbar
+          sx={{
+            justifyContent: 'space-between',
+            [theme.breakpoints.up('sm')]: { paddingLeft: 0, paddingRight: 0 },
+          }}
+        >
+          <Typography variant="h3" color="text.primary">
+            LinkUp
+          </Typography>
           <UserNav />
         </Toolbar>
       </Container>

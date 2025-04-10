@@ -43,15 +43,15 @@ const UserNav = () => {
         <IconButton
           size="large"
           aria-label="switch colot theme"
-          color="inherit"
           onClick={handleSwitchTheme}
+          sx={{ color: 'text.primary' }}
         >
           {theme.palette.mode === 'dark' ? <DarkMode /> : <LightMode />}
         </IconButton>
         <IconButton
           size="large"
           aria-label={`show ${10} new notifications`}
-          color="inherit"
+          sx={{ color: 'text.primary' }}
         >
           <Badge badgeContent="10">
             <Notifications />
@@ -63,8 +63,8 @@ const UserNav = () => {
           aria-label="account of current user"
           aria-controls="menu-appbar"
           aria-haspopup="true"
-          color="inherit"
           onClick={handleOpenMenu}
+          sx={{ color: 'text.primary' }}
         >
           <AccountCircle />
         </IconButton>
