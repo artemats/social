@@ -1,4 +1,4 @@
-import { StatusTypes } from 'src/store/types.ts'
+import { StatusTypes } from 'src/store/types'
 
 export const STATUS: Record<StatusTypes, StatusTypes> = {
   IDLE: 'IDLE',

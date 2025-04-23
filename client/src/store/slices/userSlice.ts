@@ -1,5 +1,5 @@
-import { sliceStateProps } from 'src/store/types.ts'
-import { STATUS } from 'src/store/constants.ts'
+import { sliceStateProps } from 'src/store/types'
+import { STATUS } from 'src/store/constants'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IUser } from 'src/types'
 import { RootState } from 'src/store'

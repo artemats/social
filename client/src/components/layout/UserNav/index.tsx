@@ -6,8 +6,8 @@ import {
   DarkMode,
   LightMode,
 } from '@mui/icons-material'
-import { useAppDispatch } from 'src/store/hooks/useStore.ts'
-import { switchTheme } from 'src/store/slices/settingsSlice.ts'
+import { useAppDispatch } from 'src/store/hooks/useStore'
+import { switchTheme } from 'src/store/slices/settingsSlice'
 import GlobalSearch from 'src/components/shared/GlobalSearch'
 
 const UserNav = () => {

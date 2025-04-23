@@ -1,6 +1,6 @@
-import { STATUS } from 'src/store/constants.ts'
+import { STATUS } from 'src/store/constants'
 import { createSlice } from '@reduxjs/toolkit'
-import { sliceStateProps } from 'src/store/types.ts'
+import { sliceStateProps } from 'src/store/types'
 import { ThemeTypes } from 'src/types'
 import { RootState } from 'src/store'
 

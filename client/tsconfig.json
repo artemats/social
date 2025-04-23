@@ -9,11 +9,9 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "include": [
-      "src",
-      "**/*.ts",
-      "**/*.tsx",
-      "src/global.d.ts",
-    ]
-  }
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"]
+    }
+  },
 }
