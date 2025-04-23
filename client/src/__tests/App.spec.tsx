@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import Header from 'src/components/layout/Header'
+import App from 'src/App'
 
 test('Demo', () => {
   expect(true).toBe(true)
 })
 
 test('Render the Header page', () => {
-  render(<Header />)
+  render(<App />)
   expect(true).toBeTruthy()
 })

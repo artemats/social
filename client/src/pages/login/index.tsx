@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Typography } from '@mui/material'
 import LoginForm from 'src/features/auth/login-form'
-import { LoginUserProps } from 'src/features/auth/types.ts'
+import { LoginUserProps } from 'src/features/auth/types'
 
 const LoginPage = () => {
   const handleLogin = (userData: LoginUserProps) => {

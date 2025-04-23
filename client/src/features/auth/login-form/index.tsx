@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { Box, TextField, Button } from '@mui/material'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { LoginUserProps } from 'src/features/auth/types.ts'
-import { LoginSchema } from 'src/features/auth/login-form/schema.ts'
+import { LoginUserProps } from 'src/features/auth/types'
+import { LoginSchema } from 'src/features/auth/login-form/schema'
 
 type LoginFormProps = {
   onSubmit: (userData: LoginUserProps) => void
