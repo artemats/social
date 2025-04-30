@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import { Typography } from '@mui/material'
 import LoginForm from 'src/features/auth/login-form'
 import { LoginUserProps } from 'src/features/auth/types'
 
@@ -10,12 +9,9 @@ const LoginPage = () => {
 
   return (
     <Fragment>
-      <Typography
-        color="primary
-      #]"
-      >
+      <p className="text-gray-500 dark:text-gray-300">
         Welcome back! Please log in to your account.
-      </Typography>
+      </p>
       <LoginForm onSubmit={handleLogin} />
     </Fragment>
   )

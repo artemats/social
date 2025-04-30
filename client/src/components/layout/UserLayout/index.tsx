@@ -1,16 +1,15 @@
 import { Fragment } from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from 'src/components/layout/Header'
-import { Container } from '@mui/material'
+import Header from 'src/components/shared/Header'
 
 const UserLayout = () => {
   console.log('UserLayout')
   return (
     <Fragment>
       <Header />
-      <Container>
+      <div>
         <Outlet />
-      </Container>
+      </div>
     </Fragment>
   )
 }
