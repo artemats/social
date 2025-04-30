@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react'
-import StoreProvider from 'src/providers/StoreProvider'
+import ReactQueryProvider from 'src/providers/ReactQueryProvider'
 
-const CustomProvider = ({ children }: PropsWithChildren) => {
-  return <StoreProvider>{children}</StoreProvider>
+const Providers = ({ children }: PropsWithChildren) => {
+  return <ReactQueryProvider>{children}</ReactQueryProvider>
 }
 
-export default CustomProvider
+export default Providers

@@ -1,4 +1,4 @@
-import SearchForm from 'src/components/forms/search-form'
+// import SearchForm from 'src/components/forms/search-form'
 import { Avatar, AvatarImage, AvatarFallback } from 'src/components/ui/avatar'
 import { Button } from 'src/components/ui/button'
 import {
@@ -9,7 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from 'src/components/ui/dropdown-menu'
-import { Bell, Sun, MessageSquareText } from 'lucide-react'
+import { Bell, MessageSquareText } from 'lucide-react'
+import ColorModeSwitcher from 'src/components/shared/ColorModeSwitcher'
 
 const Header = () => {
   console.log('Header')
@@ -18,11 +19,9 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="flex items-center justify-between">
           <p className="font-bold text-2xl">LinkUp</p>
-          <SearchForm />
+          {/*<SearchForm />*/}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" className="cursor-pointer p-3" asChild>
-              <Sun className="w-11 h-11" />
-            </Button>
+            <ColorModeSwitcher />
             <Button variant="ghost" className="cursor-pointer p-3" asChild>
               <MessageSquareText className="w-11 h-11" />
             </Button>

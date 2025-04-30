@@ -4,8 +4,6 @@ import { LoginUserProps } from 'src/features/auth/types'
 import { LoginSchema } from 'src/features/auth/login-form/schema'
 import { Button } from 'src/components/ui/button'
 import { Input } from 'src/components/ui/input'
-import { Link } from 'react-router-dom'
-import { Fragment } from 'react'
 
 type LoginFormProps = {
   onSubmit: (data: LoginUserProps) => void
@@ -43,16 +41,6 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
         ) : null}
       </div>
       <Button className="h-10">Login</Button>
-
-      <p className="mt-10 text-center text-sm text-gray-500">
-        Don’t you have an account?{' '}
-        <Link
-          to="/registration"
-          className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-        >
-          Sign up
-        </Link>
-      </p>
     </form>
   )
 }

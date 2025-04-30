@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
-import { Input } from 'src/components/ui/input'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Input } from 'src/components/ui/input'
 import { RegisterUserProps } from 'src/features/auth/types'
 import { RegistrationSchema } from 'src/features/auth/registration-form/schema'
 import { Button } from 'src/components/ui/button'
@@ -62,16 +61,6 @@ const RegistrationForm = ({
         ) : null}
       </div>
       <Button className="h-10">Create account</Button>
-
-      <p className="mt-10 text-center text-sm text-gray-500">
-        Already have an account?{' '}
-        <Link
-          to="/login"
-          className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-        >
-          Sign in
-        </Link>
-      </p>
     </form>
   )
 }
