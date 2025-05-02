@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from 'src/components/ui/input'
 import { RegisterUserProps } from 'src/features/auth/types'
-import { RegistrationSchema } from 'src/features/auth/registration-form/schema'
+import { RegistrationSchema } from 'src/features/auth/forms/registration-form/schema'
 import { Button } from 'src/components/ui/button'
 
 const RegistrationForm = ({

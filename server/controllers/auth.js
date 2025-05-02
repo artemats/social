@@ -7,18 +7,21 @@ export const register = async (req, res) => {
     const data = req.body
 
     const salt = await bcrypt.genSalt()
-    const passwordHash = await bcrypt.hash(data.password, salt)
+    const hashedPassword = await bcrypt.hash(data.password, salt)
 
-    const user = new User({ ...data, password: passwordHash })
+    const newUser = new User({ ...data, password: hashedPassword })
 
-    await user.save()
+    const savedUser = await newUser.save()
+
+    const { password: _, ...userData } = savedUser.toObject()
 
     res.status(201).json({
       message: 'User registered successfully',
-      data: user,
+      data: userData,
     })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error('Registration error: ', err)
+    res.status(500).json({ message: err.message })
   }
 }
 
@@ -31,7 +34,7 @@ export const login = async (req, res) => {
     ).exec()
 
     if (!user) {
-      return res.status(400).json({ message: 'User not found' })
+      return res.status(400).json({ message: 'User not found.' })
     }
 
     const isMatch = await bcrypt.compare(password, user.password)
@@ -40,12 +43,15 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: 'Invalid credentials.' })
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    })
 
-    delete user.password
+    const { password: _, ...userData } = user.toObject()
 
-    res.status(200).json({ user, token })
+    res.status(200).json({ user: userData, token })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    console.error('Login error: ', err)
+    res.status(500).json({ message: err.message })
   }
 }

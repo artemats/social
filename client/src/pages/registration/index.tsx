@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import RegistrationForm from 'src/features/auth/registration-form'
+import RegistrationForm from 'src/features/auth/forms/registration-form'
 import { RegisterUserProps } from 'src/features/auth/types'
 
 const RegistrationPage = () => {

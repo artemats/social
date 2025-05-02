@@ -12,15 +12,3 @@ export interface IUser {
   viewedProfile: number
   impressions: number
 }
-
-export interface ITestUser {
-  id: number
-  first_name: string
-  last_name: string
-  email: string
-  phone: string
-  country: string
-  city: string
-  company: string
-  position: string
-}

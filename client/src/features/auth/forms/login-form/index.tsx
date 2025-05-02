@@ -1,15 +1,16 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { LoginUserProps } from 'src/features/auth/types'
-import { LoginSchema } from 'src/features/auth/login-form/schema'
+import { LoginSchema } from 'src/features/auth/forms/login-form/schema'
 import { Button } from 'src/components/ui/button'
 import { Input } from 'src/components/ui/input'
 
 type LoginFormProps = {
   onSubmit: (data: LoginUserProps) => void
+  isPending?: boolean
 }
 
-const LoginForm = ({ onSubmit }: LoginFormProps) => {
+const LoginForm = ({ onSubmit, isPending }: LoginFormProps) => {
   const {
     register,
     formState: { errors },
@@ -17,7 +18,7 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
   } = useForm<LoginUserProps>({
     resolver: zodResolver(LoginSchema),
   })
-  console.log('LoginForm, errors ', errors)
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
