@@ -6,11 +6,12 @@ import ProtectedRoute from 'src/routes/ProtectedRoute'
 import GuestLayout from 'src/components/layout/GuestLayout'
 import UserLayout from 'src/components/layout/UserLayout'
 import RegistrationPage from 'src/pages/registration'
+import { useUserStore } from 'src/store/useUserStore'
 
 function App() {
-  const user = true
+  const isAuthorized = useUserStore((state) => state.token)
   console.log('App')
-  // TODO: add layout for authenticated and unauthenticated users
+
   return (
     <main id="app">
       <BrowserRouter>
@@ -23,15 +24,15 @@ function App() {
             <Route
               path="/"
               element={
-                <ProtectedRoute isLocked={!user} redirectPath="/login">
+                <ProtectedRoute isLocked={!isAuthorized} redirectPath="/signin">
                   <HomePage />
                 </ProtectedRoute>
               }
             />
             <Route
-              path="/profile/:userId"
+              path="/profile"
               element={
-                <ProtectedRoute isLocked={!user} redirectPath="/login">
+                <ProtectedRoute isLocked={!isAuthorized} redirectPath="/signin">
                   <ProfilePage />
                 </ProtectedRoute>
               }

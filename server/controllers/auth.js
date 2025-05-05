@@ -30,7 +30,7 @@ export const login = async (req, res) => {
     const { email, password } = req.body
     const user = await User.findOne(
       { email },
-      '_id password firstName lastName picturePath'
+      '_id email password firstName lastName picturePath'
     ).exec()
 
     if (!user) {
@@ -44,7 +44,7 @@ export const login = async (req, res) => {
     }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '24h',
     })
 
     const { password: _, ...userData } = user.toObject()

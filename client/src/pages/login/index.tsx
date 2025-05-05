@@ -5,16 +5,11 @@ import { LoginUserProps } from 'src/features/auth/types'
 import { useLogin } from 'src/features/auth/hooks/useLogin'
 
 const LoginPage = () => {
-  const { mutate: login, isPending, data, error, isError } = useLogin()
+  const { mutate: login, isPending, isError } = useLogin()
 
   const handleLogin = (userData: LoginUserProps) => {
     login(userData)
   }
-
-  console.log('LoginPage, isPending ', isPending)
-  console.log('LoginPage, data ', data)
-  console.log('LoginPage, isError ', isError)
-  console.log('LoginPage, error ', error)
 
   return (
     <Fragment>

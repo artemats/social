@@ -4,6 +4,7 @@ import { LoginUserProps } from 'src/features/auth/types'
 import { LoginSchema } from 'src/features/auth/forms/login-form/schema'
 import { Button } from 'src/components/ui/button'
 import { Input } from 'src/components/ui/input'
+import { LoaderCircle } from 'lucide-react'
 
 type LoginFormProps = {
   onSubmit: (data: LoginUserProps) => void
@@ -41,7 +42,10 @@ const LoginForm = ({ onSubmit, isPending }: LoginFormProps) => {
           <p className="text-sm text-red-400">{errors.password.message}</p>
         ) : null}
       </div>
-      <Button className="h-10">Login</Button>
+      <Button className="h-10" disabled={isPending}>
+        {isPending ? <LoaderCircle className="w-8 h-8 animate-spin" /> : null}
+        Login
+      </Button>
     </form>
   )
 }

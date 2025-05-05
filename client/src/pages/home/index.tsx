@@ -1,10 +1,11 @@
-import { Button } from 'src/components/ui/button'
-
 const HomePage = () => {
   return (
-    <div>
-      <h1 className="font-bold text-4xl">Home</h1>
-      <Button>Shadcn button</Button>
+    <div className="max-w-screen-xl mx-auto grid grid-cols-4 gap-2 py-4">
+      <div className="bg-gray-50 dark:bg-zinc-900 rounded-xl h-[300px]">
+        User widget
+      </div>
+      <div className="col-span-2">Posts</div>
+      <div className="">Friends widget</div>
     </div>
   )
 }
