@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { usePosts } from 'src/features/user/hooks/usePosts'
-import Post from 'src/components/shared/Post'
+import Post from 'src/components/Post'
 
-const PostsWidget = ({ className }: { className?: string }) => {
+const Posts = ({ className }: { className?: string }) => {
   const { data: posts = [], isPending } = usePosts()
 
   console.log('PostsWidget, isPending ', isPending)
@@ -17,4 +17,4 @@ const PostsWidget = ({ className }: { className?: string }) => {
   )
 }
 
-export default PostsWidget
+export default Posts

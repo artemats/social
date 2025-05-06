@@ -49,7 +49,7 @@ const Header = () => {
                   <DropdownMenuLabel>{user.email}</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild className="cursor-pointer">
-                    <Link to="/profile">Profile</Link>
+                    <Link to={`/profile/${user._id}`}>Profile</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={setLogout}

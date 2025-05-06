@@ -1,34 +1,56 @@
 import mongoose from 'mongoose'
-// TODO: create object Author
+
+const CommentSchema = new mongoose.Schema(
+  {
+    id: String,
+    email: String,
+    firstName: String,
+    lastName: String,
+    picturePath: String,
+    description: String,
+  },
+  { timestamps: true }
+)
+
+const LikeSchema = new mongoose.Schema(
+  {
+    id: String,
+    email: String,
+    firstName: String,
+    lastName: String,
+    picturePath: String,
+  },
+  { timestamps: true }
+)
+
 const PostSchema = new mongoose.Schema(
   {
-    userId: {
-      type: String,
-      required: true,
-    },
-    firstName: {
-      type: String,
-      required: true,
-    },
-    lastName: {
-      type: String,
-      required: true,
-    },
-    location: String,
     description: String,
     picturePath: {
       type: String,
       default: '',
     },
-    userPicturePath: String,
-    // TODO: set userData to likes Map
-    likes: {
-      type: Map,
-      of: Boolean,
-    },
-    comments: {
-      type: Array,
-      default: [],
+    likes: [LikeSchema],
+    comments: [CommentSchema],
+    author: {
+      id: {
+        type: String,
+        required: true,
+      },
+      firstName: {
+        type: String,
+        required: true,
+      },
+      lastName: {
+        type: String,
+        required: true,
+      },
+      email: {
+        type: String,
+        required: true,
+      },
+      picturePath: String,
+      location: String,
     },
   },
   {

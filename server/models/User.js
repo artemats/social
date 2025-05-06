@@ -1,5 +1,16 @@
 import mongoose from 'mongoose'
 
+const FriendSchema = new mongoose.Schema(
+  {
+    id: String,
+    email: String,
+    firstName: String,
+    lastName: String,
+    picturePath: String,
+  },
+  { timestamps: true }
+)
+
 const UserSchema = new mongoose.Schema(
   {
     firstName: {
@@ -31,8 +42,7 @@ const UserSchema = new mongoose.Schema(
       default: '',
     },
     friends: {
-      type: Array,
-      default: [],
+      type: [FriendSchema],
     },
     location: String,
     occupation: String,

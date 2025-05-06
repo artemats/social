@@ -30,7 +30,7 @@ function App() {
               }
             />
             <Route
-              path="/profile"
+              path="/profile/:userId"
               element={
                 <ProtectedRoute isLocked={!isAuthorized} redirectPath="/signin">
                   <ProfilePage />

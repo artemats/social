@@ -7,7 +7,13 @@ export interface IUser {
   email: string
   password: string
   picturePath?: string
-  friends: { id: string }[]
+  friends: {
+    id: string
+    email: string
+    firstName: string
+    lastName: string
+    picturePath?: string
+  }[]
   location?: string
   occupation?: string
   viewedProfile: number
@@ -16,15 +22,35 @@ export interface IUser {
 
 export interface IPost {
   _id: string
-  userId: string
-  firstName: string
-  lastName: string
-  location: string
   description: string
   picturePath?: string
-  userPicturePath?: string
-  likes: Record<string, boolean>[]
-  comments: Record<number, string>[]
+  likes: {
+    id: string
+    email: string
+    firstName: string
+    lastName: string
+    picturePath?: string
+    createdAt: string
+    updatedAt: string
+  }[]
+  comments: {
+    id: string
+    email: string
+    firstName: string
+    lastName: string
+    picturePath?: string
+    description: string
+    createdAt: string
+    updatedAt: string
+  }[]
   createdAt: string
   updatedAt: string
+  author: {
+    id: string
+    email: string
+    firstName: string
+    lastName: string
+    location: string
+    picturePath?: string
+  }
 }
