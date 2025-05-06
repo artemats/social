@@ -40,7 +40,7 @@ const Header = () => {
                 <DropdownMenuTrigger asChild>
                   <Avatar className="cursor-pointer">
                     <AvatarImage src={user.picturePath} />
-                    <AvatarFallback className="bg-gray-300 dark:bg-zinc-700 user-select-none">
+                    <AvatarFallback className="bg-zinc-300 dark:bg-zinc-700 user-select-none text-sm">
                       {user.firstName.split('')[0] + user.lastName.split('')[0]}
                     </AvatarFallback>
                   </Avatar>
