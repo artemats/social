@@ -5,7 +5,7 @@ import { LoginUserProps } from 'src/features/auth/types'
 import { useLogin } from 'src/features/auth/hooks/useLogin'
 
 const LoginPage = () => {
-  const { mutate: login, isPending, isError } = useLogin()
+  const { mutate: login, isPending } = useLogin()
 
   const handleLogin = (userData: LoginUserProps) => {
     login(userData)

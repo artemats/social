@@ -4,6 +4,7 @@ import { Fragment } from 'react'
 import { MapPinCheckInside, BriefcaseBusiness } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from 'src/components/ui/avatar'
 import WidgetWrapper from 'src/components/ui/WidgetWrapper'
+import { Link } from 'react-router-dom'
 
 const UserWidget = ({ className }: { className?: string }) => {
   const { data, isPending } = useUser()
@@ -39,9 +40,9 @@ const UserWidget = ({ className }: { className?: string }) => {
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="text-lg font-bold">
+              <Link to={`/profile/${data._id}`} className="text-lg font-bold">
                 {data.firstName} {data.lastName}
-              </p>
+              </Link>
               <p className="text-sm">{data.friends.length} friends</p>
             </div>
           </div>

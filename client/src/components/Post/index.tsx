@@ -2,6 +2,7 @@ import { IPost } from 'src/types'
 import { Avatar, AvatarFallback, AvatarImage } from 'src/components/ui/avatar'
 import WidgetWrapper from 'src/components/ui/WidgetWrapper'
 import { Heart, MessageSquareText } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Post = ({ data }: { data: IPost }) => {
   console.log('Post, data ', data)
@@ -16,9 +17,9 @@ const Post = ({ data }: { data: IPost }) => {
           </AvatarFallback>
         </Avatar>
         <div>
-          <p className="text-md font-bold">
+          <Link to={`/profile/${data.author.id}`} className="text-md font-bold">
             {data.author.firstName} {data.author.lastName}
-          </p>
+          </Link>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-none">
             {data.author.location}
           </p>
